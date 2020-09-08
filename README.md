@@ -36,6 +36,11 @@ ionic start onews --type=angular
 > Starter template: sidemenu
 
 cd onews
+
+ionic g 
+> service
+> Name/path of service: service/news-api
+
 ionic lab 
 ```
 
