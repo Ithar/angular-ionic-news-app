@@ -34,6 +34,9 @@ npm i -g ionic cordova
 ```
 ionic start onews --type=angular
 > Starter template: sidemenu
+
+cd onews
+ionic lab 
 ```
 
 ## Application Run
@@ -45,13 +48,13 @@ ionic serve
 ## Application Deploy
 ```
 cd onews
-ng build --prod
 ```
 
 
 ## Application URL
 LocaL : http://localhost:8100
 
+Labs  : http://localhost:8200  
 
 
 ## Further enhancements 
