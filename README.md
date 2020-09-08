@@ -37,6 +37,7 @@ ionic start onews --type=angular
 
 cd onews
 
+// Service
 ionic g 
 > service
 > Name/path of service: service/news-api

@@ -7,6 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -15,7 +16,24 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-grid fixed class="--ion-grid-padding" *ngIf="!isLoading">
+      <ion-row>
+        <ion-col *ngFor="let article of news" size="12" size-sm="4" size-md="6" size-lg="8">
+          <ion-card>
+            <ion-img src="{{ article.urlToImage }}"></ion-img>
+            <ion-card-header>
+              <ion-card-subtitle>{{ article.publishedAt | date}}</ion-card-subtitle>
+              <ion-card-title>{{ article.title }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{ article.description }}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-spinner name="dots" class="news-loader" *ngIf="isLoading"></ion-spinner>
   </div>
 </ion-content>
