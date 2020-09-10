@@ -28,8 +28,8 @@ export class FolderPage implements OnInit {
   private loadNews() {
 
     this.newsApi.getHeadlines('us').subscribe( news => {
-      this.isLoading = false;
       this.news = news.articles.filter( article => article.urlToImage !== null);
+      setTimeout(() => this.isLoading = false, 1500);
     }, (e) => {
       console.log('Failed to get news');
     });

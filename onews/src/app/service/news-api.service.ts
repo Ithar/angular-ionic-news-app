@@ -14,6 +14,6 @@ export class NewsApiService {
   constructor(private http: HttpClient) { }
 
   getHeadlines(country: string): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/top-headlines?apikey=${this.API_KEY}&country=${country}&pageSize=2`);
+    return this.http.get(`${this.BASE_URL}/top-headlines?apikey=${this.API_KEY}&country=${country}&pageSize=10`);
   }
 }
