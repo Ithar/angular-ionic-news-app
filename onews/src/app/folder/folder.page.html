@@ -19,40 +19,23 @@
         <ion-col size="12">
           <ion-card>
             <ion-list>
-              <ion-list-header>
-                <ion-label>Filter</ion-label>
-              </ion-list-header>
-
               <ion-item>
                 <ion-label>Country</ion-label>
-                <ion-select placeholder="" okText="Okay" cancelText="Dismiss">
-                  <ion-select-option value="f">Female</ion-select-option>
-                  <ion-select-option value="m">Male</ion-select-option>
-                  <ion-select-option value="brown">Brown</ion-select-option>
-                  <ion-select-option value="blonde">Blonde</ion-select-option>
-                  <ion-select-option value="black">Black</ion-select-option>
-                  <ion-select-option value="red">Red</ion-select-option>
+                <ion-select interface="popover" [(ngModel)]="selectedCountry" (ngModelChange)="countryChange()"> 
+                  <ion-select-option *ngFor="let country of countries" [value]="country">{{ country.name }}</ion-select-option>
                 </ion-select>
               </ion-item>
-
               <ion-item>
                 <ion-label>Category</ion-label>
-                <ion-select placeholder="" okText="Okay" cancelText="Dismiss">
-                  <ion-select-option value="f">Female</ion-select-option>
-                  <ion-select-option value="m">Male</ion-select-option>
-                  <ion-select-option value="brown">Brown</ion-select-option>
-                  <ion-select-option value="blonde">Blonde</ion-select-option>
-                  <ion-select-option value="black">Black</ion-select-option>
-                  <ion-select-option value="red">Red</ion-select-option>
+                <ion-select interface="popover" [(ngModel)]="selectedCategory">
+                  <ion-select-option *ngFor="let category of categories" [value]="category">{{ category.name }}</ion-select-option>
                 </ion-select>
               </ion-item>
-
             </ion-list>
           </ion-card>
         </ion-col>
       </ion-row>  
     </ion-grid> 
-
 
     <!-- News -->
     <ion-grid fixed class="ion-align-items-center" *ngIf="!isLoading">
@@ -72,6 +55,21 @@
       </ion-row>
     </ion-grid>
 
-    <ion-spinner name="dots" class="news-loader" *ngIf="isLoading"></ion-spinner>
+    <div *ngIf="isLoading">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Loading 
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-spinner name="dots" class="news-loader"></ion-spinner>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    
   </div>
 </ion-content>

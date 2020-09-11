@@ -13,7 +13,31 @@ export class NewsApiService {
   
   constructor(private http: HttpClient) { }
 
-  getHeadlines(country: string): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/top-headlines?apikey=${this.API_KEY}&country=${country}&pageSize=10`);
+  getHeadlines(country: string, category: string): Observable<any> {
+
+    let countryPram  = this.getCountryPram(country);
+    let categoryPram  = this.getCategoryPram(category);
+
+    return this.http.get(`${this.BASE_URL}/top-headlines?apikey=${this.API_KEY}${countryPram}${categoryPram}&pageSize=10`);
   }
+
+  private getCountryPram(country: string) {
+    
+    if (country === '-') {
+      return 'gb';
+    }
+
+    return '&country='+country;
+  }
+
+  private getCategoryPram(category: string) {
+    
+    if (category === '') {
+      return '';
+    }
+
+    return '&category='+category;
+  }
+
+  
 }
