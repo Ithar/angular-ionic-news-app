@@ -24,7 +24,7 @@ export class NewsApiService {
   private getCountryPram(country: string) {
     
     if (country === '-') {
-      return 'gb';
+      country = 'gb';
     }
 
     return '&country='+country;

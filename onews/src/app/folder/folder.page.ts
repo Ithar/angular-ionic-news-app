@@ -42,7 +42,7 @@ export class FolderPage implements OnInit {
   }
 
   private countryChange() {
-
+    this.loadNews(this.selectedCountry.code, this.selectedCategory.id);
   }
 
 }
