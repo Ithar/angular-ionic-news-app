@@ -40,6 +40,10 @@ ionic start onews --type=angular
 cd onews
 
 ionic lab
+
+ionic cordova plugin add cordova-sqlite-storage
+npm install --save @ionic/storage
+
 ```
 
 ## Application Components 

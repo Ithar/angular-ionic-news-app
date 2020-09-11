@@ -54,7 +54,17 @@
               <ion-card-title>{{ article.title }}</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              {{ (article.description.length > 80) ? (article.description | slice:0:80) + '...' : article.description }}
+              <ion-row>
+                <ion-col>
+                  {{ (article.description.length > 80) ? (article.description | slice:0:80) + '...' : article.description }}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="book-outline"></ion-icon>
+                    <ion-button expand="block" color="secondary" (click)="viewArticle()">Continue Reading ... <ion-icon name="open-outline"></ion-icon></ion-button>
+                </ion-col>
+               </ion-row>
             </ion-card-content>
           </ion-card>
         </ion-col>

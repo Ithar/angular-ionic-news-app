@@ -1,6 +1,6 @@
 import { ToastMessageService } from './../service/toast-message.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { COUNTRIES } from '../constants/countries';
 import { CATEGORIES } from './../constants/categories';
@@ -20,7 +20,8 @@ export class FolderPage implements OnInit {
   private categories: Array<any> = CATEGORIES; 
   private selectedCategory = CATEGORIES[0];
 
-  constructor(private activatedRoute: ActivatedRoute, private newsApi: NewsApiService, private toastMessageService: ToastMessageService) { }
+  constructor(private activatedRoute: ActivatedRoute, private newsApi: NewsApiService, 
+    private toastMessageService: ToastMessageService, private router: Router) { }
 
   ngOnInit() {
     this.getFolder();
@@ -54,4 +55,7 @@ export class FolderPage implements OnInit {
     }, 1000);
   }
 
+  viewArticle() {
+    this.router.navigate(['/article-details']);
+  }
 }
