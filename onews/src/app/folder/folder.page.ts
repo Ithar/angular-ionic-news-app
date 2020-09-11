@@ -1,3 +1,4 @@
+import { ToastMessageService } from './../service/toast-message.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +20,7 @@ export class FolderPage implements OnInit {
   private categories: Array<any> = CATEGORIES; 
   private selectedCategory = CATEGORIES[0];
 
-  constructor(private activatedRoute: ActivatedRoute, private newsApi: NewsApiService) { }
+  constructor(private activatedRoute: ActivatedRoute, private newsApi: NewsApiService, private toastMessageService: ToastMessageService) { }
 
   ngOnInit() {
     this.getFolder();
@@ -36,13 +37,20 @@ export class FolderPage implements OnInit {
       this.news = news.articles.filter( article => article.urlToImage !== null);
       setTimeout(() => this.isLoading = false, 1500);
     }, (e) => {
-      console.log('Failed to get news');
+      this.toastMessageService.presentToast('An error occured while getting the news');
     });
 
   }
 
-  private countryChange() {
+  private applyFilter() {
+    this.isLoading = true;
     this.loadNews(this.selectedCountry.code, this.selectedCategory.id);
+  }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
   }
 
 }

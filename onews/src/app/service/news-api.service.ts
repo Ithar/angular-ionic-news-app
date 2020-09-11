@@ -39,5 +39,4 @@ export class NewsApiService {
     return '&category='+category;
   }
 
-  
 }

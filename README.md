@@ -42,6 +42,11 @@ ionic g
 > service
 > Name/path of service: service/news-api
 
+ionic g 
+> service
+> Name/path of service: service/toast-message
+
+
 ionic lab 
 ```
 
