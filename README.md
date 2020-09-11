@@ -3,6 +3,8 @@ News app for Android/ iOS
 
 #### Features 
 - News API 
+- Filtering
+- Sqlite storage
 
 ## 
 
@@ -37,17 +39,16 @@ ionic start onews --type=angular
 
 cd onews
 
-// Service
-ionic g 
-> service
-> Name/path of service: service/news-api
+ionic lab
+```
 
-ionic g 
-> service
-> Name/path of service: service/toast-message
+## Application Components 
+```
+ionic g service service/news-api
+ionic g service service/toast-message
 
-
-ionic lab 
+ionic g page article-details
+ 
 ```
 
 ## Application Run

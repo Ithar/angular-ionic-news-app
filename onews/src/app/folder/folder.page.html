@@ -43,8 +43,6 @@
       </ion-row>  
     </ion-grid> 
 
-   
-
     <!-- News -->
     <ion-grid fixed class="ion-align-items-center" *ngIf="!isLoading">
       <ion-row>  
@@ -56,7 +54,7 @@
               <ion-card-title>{{ article.title }}</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              {{ article.description }}
+              {{ (article.description.length > 80) ? (article.description | slice:0:80) + '...' : article.description }}
             </ion-card-content>
           </ion-card>
         </ion-col>

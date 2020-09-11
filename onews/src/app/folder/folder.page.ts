@@ -37,6 +37,7 @@ export class FolderPage implements OnInit {
       this.news = news.articles.filter( article => article.urlToImage !== null);
       setTimeout(() => this.isLoading = false, 1500);
     }, (e) => {
+      console.log(e.message);
       this.toastMessageService.presentToast('An error occured while getting the news');
     });
 
