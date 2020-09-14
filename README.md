@@ -78,6 +78,7 @@ Labs  : http://localhost:8200
 - Read full Article  
 - News provider slider 
 - Share component for news card
+- Limit favorites
 
 
 

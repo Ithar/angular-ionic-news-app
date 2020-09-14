@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage';
 export class ArticleDetailsPage implements OnInit {
 
   private article: any = {};
-  private isFavoriate = false;
+  private isFavorite = false;
 
   constructor(private storage: Storage, private toastMessageService: ToastMessageService) { }
 
@@ -25,31 +25,31 @@ export class ArticleDetailsPage implements OnInit {
     } 
   }
 
-  private async addToFavoriates(article: any) {
-    const favoriates = await this.storage.get('favoriates');
+  private async addToFavorites(article: any) {
+    const favoriates = await this.storage.get('favorites');
     if (favoriates != null) {
       favoriates.push(article);
-      this.storage.set('favoriates', favoriates);
+      this.storage.set('favorites', favoriates);
     } else {
-      this.storage.set('favoriates', [article]);
+      this.storage.set('favorites', [article]);
     }
 
-    this.toastMessageService.presentToast('Added to favoriates');
-    this.isFavoriate = true;
+    this.toastMessageService.presentToast('Added to favorites');
+    this.isFavorite = true;
   }
 
 
-  private async removeFromFavoriates(article: any) {
+  private async removeFromFavorites(article: any) {
     
     const url = article.url;
 
-    const favoriates = await this.storage.get('favoriates');
+    const favorites = await this.storage.get('favorites');
 
-    if (favoriates != null) {
-      this.storage.set('favoriates' , favoriates.filter(article => article.url !== url));
+    if (favorites !== null) {
+      this.storage.set('favorites' , favorites.filter(article => article.url !== url));
     }
 
-    this.isFavoriate = false;
+    this.isFavorite = false;
   }
 
 }

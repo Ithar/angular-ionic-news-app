@@ -34,20 +34,20 @@
               </ion-col>
             </ion-row>
 
-            <!-- Add Favoriate -->
-            <ion-row *ngIf="!isFavoriate">
+            <!-- Add Favorite -->
+            <ion-row *ngIf="!isFavorite">
               <ion-col>
-                <ion-button expand="block" color="secondary" (click)="addToFavoriates(article)">
+                <ion-button expand="block" color="secondary" (click)="addToFavorites(article)">
                   <ion-icon name="heart-outline"></ion-icon>
                   <span class="ion-padding">Favorite</span>
                 </ion-button>
               </ion-col>
             </ion-row>
 
-            <!-- Add Remove -->
-            <ion-row *ngIf="isFavoriate">
+            <!-- Remove Favorite -->
+            <ion-row *ngIf="isFavorite">
               <ion-col>
-                <ion-button expand="block" color="secondary" (click)="removeFromFavoriates(article)">
+                <ion-button expand="block" color="secondary" (click)="removeFromFavorites(article)">
                   <ion-icon name="heart"></ion-icon>
                   <span class="ion-padding">Remove</span>
                 </ion-button>
