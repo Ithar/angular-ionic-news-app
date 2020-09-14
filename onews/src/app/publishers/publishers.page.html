@@ -8,11 +8,12 @@
 </ion-header>
 
 
+
 <ion-content>
   <ion-grid fixed>
     <ion-row class="ion-justify-content-center">
       <ion-col *ngFor="let publisher of publishers" size="12" size-xs="6" size-sm="4" size-md="3" size-lg="2">
-        <ion-card class="publisher-card"> 
+        <ion-card class="publisher-card" (click)="getPublisherNews(publisher)"> 
           <ion-card-header class="ion-text-center">
             <strong>{{ publisher.name}}</strong> 
           </ion-card-header>

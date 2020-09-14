@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'publishers',
     loadChildren: () => import('./publishers/publishers.module').then( m => m.PublishersPageModule)
+  },
+  {
+    path: 'publiser-news',
+    loadChildren: () => import('./publiser-news/publiser-news.module').then( m => m.PubliserNewsPageModule)
   }
 ];
 

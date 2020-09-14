@@ -16,4 +16,8 @@ export class PublishersPage implements OnInit {
   ngOnInit() {
   }
 
+  getPublisherNews(publisher: any) {
+    
+
+  }
 }
