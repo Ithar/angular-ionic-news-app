@@ -6,6 +6,8 @@ import { COUNTRIES } from '../constants/countries';
 import { CATEGORIES } from './../constants/categories';
 import { NewsApiService } from './../service/news-api.service';
 
+import { Storage } from '@ionic/storage';
+
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
@@ -20,8 +22,12 @@ export class FolderPage implements OnInit {
   private categories: Array<any> = CATEGORIES; 
   private selectedCategory = CATEGORIES[0];
 
-  constructor(private activatedRoute: ActivatedRoute, private newsApi: NewsApiService, 
-    private toastMessageService: ToastMessageService, private router: Router) { }
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private newsApi: NewsApiService, 
+    private toastMessageService: ToastMessageService, 
+    private router: Router,
+    private storage: Storage) { }
 
   ngOnInit() {
     this.getFolder();
@@ -55,7 +61,8 @@ export class FolderPage implements OnInit {
     }, 1000);
   }
 
-  viewArticle() {
+  async viewArticle(article : any) {
+    await this.storage.set('article', article);
     this.router.navigate(['/article-details']);
   }
 }

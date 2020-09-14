@@ -8,5 +8,35 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size=12 size-lg="6">
+        <ion-card>
+          <ion-img src=" {{ article.urlToImage }}"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>{{ article.publishedAt | date}}</ion-card-subtitle>
+            <ion-card-title>{{ article.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col>
+              <ion-text color="dark">
+                <h5> {{ article.author }}</h5>
+              </ion-text>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p>
+                  {{ article.content }}
+                  <a href="article.url">Read full</a>
+                </p>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
