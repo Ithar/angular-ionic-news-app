@@ -52,6 +52,7 @@ ionic g service service/news-api
 ionic g service service/toast-message
 
 ionic g page article-details
+ionic g page publishers
  
 ```
 
