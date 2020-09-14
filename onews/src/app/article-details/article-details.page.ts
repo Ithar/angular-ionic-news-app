@@ -27,7 +27,7 @@ export class ArticleDetailsPage implements OnInit {
 
    async addToFavorites(article: any) {
     const favoriates = await this.storage.get('favorites');
-    if (favoriates != null) {
+    if (favoriates !== null) {
       favoriates.push(article);
       this.storage.set('favorites', favoriates);
     } else {

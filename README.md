@@ -79,6 +79,8 @@ Labs  : http://localhost:8200
 - News provider slider 
 - Share component for news card
 - Limit favorites
+- Make favorites dynamic 
+- Make favorites clickable
 
 
 

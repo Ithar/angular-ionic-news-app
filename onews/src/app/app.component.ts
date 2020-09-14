@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       icon: 'apps'
     }
   ];
-  public labels = [];
+  public favorites = [];
 
   constructor(
     private platform: Platform,
@@ -54,10 +54,11 @@ export class AppComponent implements OnInit {
   private async setFavorites() {
 
     const favorites = await this.stoage.get('favorites');
-    favorites.forEach(article => {
-      let title = (article.title.length > 20) ? article.title.substring(0, 20) : article.title;
-       this.labels.push(title + '...'); 
-    });
-
+    if (favorites !== null) {
+      favorites.forEach(article => {
+        let title = (article.title.length > 20) ? article.title.substring(0, 20) : article.title;
+         this.favorites.push(title + '...'); 
+      });
+    }
   }
 }
