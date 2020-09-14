@@ -11,9 +11,9 @@ import { Storage } from '@ionic/storage';
 })
 export class PubliserNewsPage implements OnInit {
 
-  private name: String;
-  private articles: Array<any> = [];
-  private isLoading: boolean = true;
+  public name: String;
+  public articles: Array<any> = [];
+  public isLoading: boolean = true;
 
   constructor(
     private activatedRoute: ActivatedRoute, 

@@ -64,7 +64,7 @@ ionic serve
 
 ## Application Deploy
 ```
-cd onews
+ionic build --prod
 ```
 
 

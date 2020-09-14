@@ -10,7 +10,7 @@ import { PUBLISHERS } from '../constants/publishers';
 })
 export class PublishersPage implements OnInit {
 
-  private publishers: Array<any> = PUBLISHERS;
+  public publishers: Array<any> = PUBLISHERS;
 
   constructor(private router: Router) { }
 

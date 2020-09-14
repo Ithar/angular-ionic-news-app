@@ -15,12 +15,12 @@ import { Storage } from '@ionic/storage';
 })
 export class FolderPage implements OnInit {
   public folder: string;
-  private articles: Array<any> = [];
-  private isLoading: boolean = true; 
-  private countries: Array<any> = COUNTRIES;
-  private selectedCountry = COUNTRIES[4];
-  private categories: Array<any> = CATEGORIES; 
-  private selectedCategory = CATEGORIES[0];
+  public articles: Array<any> = [];
+  public isLoading: boolean = true; 
+  public countries: Array<any> = COUNTRIES;
+  public selectedCountry = COUNTRIES[4];
+  public categories: Array<any> = CATEGORIES; 
+  public selectedCategory = CATEGORIES[0];
 
   constructor(
     private activatedRoute: ActivatedRoute, 
@@ -50,7 +50,7 @@ export class FolderPage implements OnInit {
 
   }
 
-  private applyFilter() {
+  public applyFilter() {
     this.isLoading = true;
     this.loadNews(this.selectedCountry.code, this.selectedCategory.id);
   }

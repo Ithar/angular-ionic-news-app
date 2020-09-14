@@ -9,8 +9,8 @@ import { Storage } from '@ionic/storage';
 })
 export class ArticleDetailsPage implements OnInit {
 
-  private article: any = {};
-  private isFavorite = false;
+  article: any = {};
+  isFavorite = false;
 
   constructor(private storage: Storage, private toastMessageService: ToastMessageService) { }
 
@@ -25,7 +25,7 @@ export class ArticleDetailsPage implements OnInit {
     } 
   }
 
-  private async addToFavorites(article: any) {
+   async addToFavorites(article: any) {
     const favoriates = await this.storage.get('favorites');
     if (favoriates != null) {
       favoriates.push(article);
@@ -38,8 +38,7 @@ export class ArticleDetailsPage implements OnInit {
     this.isFavorite = true;
   }
 
-
-  private async removeFromFavorites(article: any) {
+  public async removeFromFavorites(article: any) {
     
     const url = article.url;
 
