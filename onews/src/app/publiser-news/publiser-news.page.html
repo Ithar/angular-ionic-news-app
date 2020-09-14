@@ -1,9 +1,40 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>publiser-news</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='folder/Home'></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+ <!-- News -->
+ <ion-grid fixed class="ion-align-items-center" *ngIf="!isLoading">
+  <ion-row>  
+    <ion-col *ngFor="let article of articles" size="12" size-lg="4">
+      <ion-card>
+        <ion-img src=" {{ article.urlToImage }}"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>{{ article.publishedAt | date}}</ion-card-subtitle>
+          <ion-card-title>{{ article.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              {{ (article.description.length > 80) ? (article.description | slice:0:80) + '...' : article.description }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-icon name="book-outline"></ion-icon>
+                <ion-button expand="block" color="secondary" (click)="viewArticle(article)">Continue Reading ... <ion-icon name="open-outline"></ion-icon></ion-button>
+            </ion-col>
+           </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
 </ion-content>

@@ -54,7 +54,6 @@ ionic g service service/toast-message
 ionic g page article-details
 ionic g page publishers
 ionic g page publiser-news
- 
 ```
 
 ## Application Run
@@ -76,10 +75,10 @@ Labs  : http://localhost:8200
 
 
 ## Further enhancements 
-- 
+- Read full Article  
+- News provider slider 
+- Share component for news card
 
-
------
 
 
 

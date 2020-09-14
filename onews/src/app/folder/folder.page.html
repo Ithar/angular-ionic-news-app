@@ -43,10 +43,26 @@
       </ion-row>  
     </ion-grid> 
 
+    <!-- Loader -->
+    <div *ngIf="isLoading">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Loading 
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-spinner name="dots" class="news-loader"></ion-spinner>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
     <!-- News -->
     <ion-grid fixed class="ion-align-items-center" *ngIf="!isLoading">
       <ion-row>  
-        <ion-col *ngFor="let article of news" size="12" size-lg="4">
+        <ion-col *ngFor="let article of articles" size="12" size-lg="4">
           <ion-card>
             <ion-img src=" {{ article.urlToImage }}"></ion-img>
             <ion-card-header>
@@ -70,22 +86,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-
-    <div *ngIf="isLoading">
-
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            Loading 
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-spinner name="dots" class="news-loader"></ion-spinner>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
     
   </div>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 import { PUBLISHERS } from '../constants/publishers';
 
@@ -11,13 +12,19 @@ export class PublishersPage implements OnInit {
 
   private publishers: Array<any> = PUBLISHERS;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   getPublisherNews(publisher: any) {
-    
+    const extras: NavigationExtras = {
+      queryParams: {
+        name: publisher.name,
+        code: publisher.code
+      }
+    }
 
+    this.router.navigate(['/publiser-news'], extras);
   }
 }

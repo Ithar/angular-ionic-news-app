@@ -15,7 +15,7 @@ import { Storage } from '@ionic/storage';
 })
 export class FolderPage implements OnInit {
   public folder: string;
-  private news: Array<any> = [];
+  private articles: Array<any> = [];
   private isLoading: boolean = true; 
   private countries: Array<any> = COUNTRIES;
   private selectedCountry = COUNTRIES[4];
@@ -41,7 +41,7 @@ export class FolderPage implements OnInit {
   private loadNews(country: string, category: string) {
 
     this.newsApi.getHeadlines(country, category).subscribe( news => {
-      this.news = news.articles.filter( article => article.urlToImage !== null);
+      this.articles = news.articles.filter( article => article.urlToImage !== null);
       setTimeout(() => this.isLoading = false, 1500);
     }, (e) => {
       console.log(e.message);

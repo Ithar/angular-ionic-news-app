@@ -21,6 +21,10 @@ export class NewsApiService {
     return this.http.get(`${this.BASE_URL}/top-headlines?apikey=${this.API_KEY}${countryPram}${categoryPram}&pageSize=10`);
   }
 
+  getHeadlinesBySource(source: string): Observable<any> {
+    return this.http.get(`${this.BASE_URL}/top-headlines?apikey=${this.API_KEY}&sources=${source}&pageSize=10`);
+  }
+
   private getCountryPram(country: string) {
     
     if (country === '-') {
