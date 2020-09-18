@@ -56,17 +56,18 @@ ionic g page publishers
 ionic g page publiser-news
 ```
 
-## Application Run
+## Application Run/Build
 ```
 cd onews 
 ionic serve
+
+ionic build --prod
 ```
 
 ## Application Deploy
 ```
-ionic build --prod
-```
 
+```
 
 ## Application URL
 LocaL : http://localhost:8100
@@ -85,3 +86,6 @@ Labs  : http://localhost:8200
 
 
 
+-----------
+
+![Home](preview/1.Home.png)
